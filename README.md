@@ -26,14 +26,12 @@ See [ROADMAP.md](docs/ROADMAP.md) for detailed progress.
 
 ## Current Progress
 
-**Climbing Stairs — In Progress**
+**Climbing Stairs — Completed**
 
 Implemented:
 - Recursive solution with memoization.
 - Dictionary-based caching.
 - Tracking total calls, cache hits, and cache misses.
-
-Upcoming:
 - Naive recursive implementation.
 - Performance comparison.
 - Edge-case testing.

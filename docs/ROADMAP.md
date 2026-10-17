@@ -6,8 +6,8 @@
 - [ ] Implement factorial recursion.
 - [ ] Implement Fibonacci recursion.
 - [x] Implement Climbing Stairs using memoization.
-- [ ] Implement naive Climbing Stairs recursion.
-- [ ] Compare both approaches.
+- [x] Implement naive Climbing Stairs recursion.
+- [x] Compare both approaches.
 - [ ] Explain base cases, recursive cases, and call stacks.
 
 ## Phase 2: Recursion Analysis
