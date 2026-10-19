@@ -1,6 +1,7 @@
 # Recursion Lab Roadmap
 
-## Phase 1: Recursion Fundamentals
+## Recursion Fundamentals
+
 **Status:** In Progress
 
 - [ ] Implement factorial recursion.
@@ -12,16 +13,8 @@
 - [x] Validate Climbing Stairs outputs, counters, and cache reuse with pytest (15 tests).
 - [x] Document Climbing Stairs approaches, complexity, and experimental results in [Complexity Analysis](COMPLEXITY_ANALYSIS.md) and the [report](FINAL_REPORT.md).
 
-## Phase 2: Recursion Analysis
-**Status:** In Progress (Climbing Stairs)
+## Memoization and Dynamic Programming
 
-- [ ] Trace recursive call trees.
-- [x] Measure recursive function calls for Climbing Stairs.
-- [x] Identify overlapping subproblems in Climbing Stairs.
-- [x] Analyze recursive time complexity for Climbing Stairs.
-- [x] Analyze recursion stack space complexity for Climbing Stairs.
-
-## Phase 3: Memoization and Dynamic Programming
 **Status:** In Progress (Climbing Stairs)
 
 - [x] Document top-down memoization for Climbing Stairs.
@@ -29,7 +22,8 @@
 - [ ] Compare naive, memoized, and iterative solutions.
 - [ ] Analyze memory and time trade-offs.
 
-## Phase 4: Divide and Conquer
+## Divide and Conquer
+
 **Status:** Not Started
 
 - [ ] Implement recursive Binary Search.
@@ -37,15 +31,22 @@
 - [ ] Understand divide, conquer, and combine.
 - [ ] Analyze recurrence relations.
 
-## Phase 5: Recursive Data Structures
-**Status:** Not Started
+## Recursive Data Structures
 
-- [ ] Recursively traverse nested lists.
+**Status:** In Progress (flat and nested lists completed on 2026-10-19)
+
+- [x] Recursively sum and multiply elements in a flat list.
+- [x] Recursively traverse nested lists to sum and count integers.
+- [x] Add simple module docstrings describing behavior and complexity.
+- [x] Validate flat and nested list functions with pytest (36 tests).
+- [x] Analyze recursion depth for flat and nested lists.
+- [x] Document list behavior, complexity, and test results.
 - [ ] Implement binary tree traversal.
 - [ ] Understand depth-first search.
-- [ ] Analyze recursion depth.
+- [ ] Analyze recursion depth for binary trees.
 
-## Phase 6: Backtracking and Final Analysis
+## Backtracking and Final Analysis
+
 **Status:** Not Started
 
 - [ ] Generate subsets recursively.
@@ -59,4 +60,4 @@
 
 Each exercise should have a working implementation, validation with test cases, an explanation of its recursive behavior, and documented time and space complexity.
 
-The project is complete when all six phases and their documentation have been reviewed.
+The project is complete when all sections and their documentation have been reviewed.

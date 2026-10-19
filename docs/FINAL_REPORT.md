@@ -1,16 +1,29 @@
-# Recursion Lab — Project Report
+# Project Report
 
-Status: In progress; this report currently covers the completed Climbing Stairs exercise.
+**Status:** In progress.
 
-## Climbing Stairs
+## Completed Work
 
-Both approaches count ordered sequences of one-step and two-step moves using `ways(n) = ways(n - 1) + ways(n - 2)`, with `ways(0) = ways(1) = 1`.
+| Exercise | Implementation | Tests Passed |
+| --- | --- | --- |
+| Climbing Stairs | Naive and memoized recursion with call counters | 15 |
+| Flat lists | Recursive sum and product | 16 |
+| Nested lists | Recursive sum and integer count | 20 |
 
-- **Naive recursion:** explores both branches and repeats subproblems; O(2^n) time and O(n) stack space.
-- **Memoized recursion:** caches each non-base result for reuse; O(n) time with an empty cache and O(n) total auxiliary space, including the stack.
+Each exercise includes base cases, complexity documentation, and automated tests. The list modules also include short explanatory docstrings.
 
-The pytest suite passed all 15 tests on 2026-10-19, checking outputs and counters for `n = 0, 1, 2, 3, 4, 5, 10`, plus cache reuse. At `n = 5`, both return 8 ways, with 15 naive calls versus 9 memoized calls. At `n = 10`, both return 89 ways, with 177 versus 19 calls (about 89% fewer). Reusing the cache for `n = 5` adds only one call and one hit.
+## Key Findings
 
-These call counts demonstrate reduced repeated work; runtime was not benchmarked. Both approaches still use a linear-depth call stack. See [Complexity Analysis](COMPLEXITY_ANALYSIS.md) for the full results and counter definitions.
+- **Climbing Stairs:** memoization reduces time from O(2^n) to O(n). At `n = 10`, calls drop from 177 to 19 while both return 89 ways.
+- **Flat lists:** sum and product visit each element once, using O(n) time and O(n) stack space.
+- **Nested lists:** sum and count visit each element once, using O(n) time and O(n) worst-case stack space. Here n includes integers and sublists across all levels.
 
-Remaining project work, including bottom-up tabulation and other algorithms, is tracked in the [roadmap](ROADMAP.md).
+The complexity bounds assume constant-cost arithmetic. See [Complexity Analysis](COMPLEXITY_ANALYSIS.md) for base cases, examples, and test links.
+
+## Validation
+
+All **51 tests passed** across the runs recorded on 2026-10-19. Tests cover outputs, counters, cache reuse, empty lists, negative numbers, zeros, nesting, and starting indices. Pytest reported cache-write warnings.
+
+## Remaining Work
+
+Factorial, Fibonacci, bottom-up tabulation, binary search, merge sort, binary tree traversal, and backtracking remain planned. See the [roadmap](ROADMAP.md).

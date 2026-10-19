@@ -13,18 +13,26 @@ A hands-on Python learning project exploring recursive algorithms, their executi
 
 ## Project Scope
 
-The project is divided into six phases:
+The project is divided into five phases:
 
 1. **Recursion Fundamentals**: Factorial, Fibonacci, and Climbing Stairs.
-2. **Recursion Analysis**: Recursive call counting, recursion trees, and complexity.
-3. **Memoization and Dynamic Programming**: Caching, top-down and bottom-up solutions.
-4. **Divide and Conquer**: Recursive Binary Search and Merge Sort.
-5. **Recursive Data Structures**: Nested lists and binary tree traversal.
-6. **Backtracking**: Subsets, permutations, and final comparative analysis.
+2. **Memoization and Dynamic Programming**: Caching, top-down and bottom-up solutions.
+3. **Divide and Conquer**: Recursive Binary Search and Merge Sort.
+4. **Recursive Data Structures**: Flat lists, nested lists, and binary tree traversal.
+5. **Backtracking**: Subsets, permutations, and final comparative analysis.
 
 See [ROADMAP.md](docs/ROADMAP.md) for detailed progress.
 
 ## Current Progress
+
+**Recursive Lists — Completed**
+
+- [Flat lists](problems/data_structures/recursive_list.py): recursively sum or multiply integers by advancing an index.
+- [Nested lists](problems/data_structures/nested_list.py): recursively sum or count integers, including inside sublists.
+- Simple module docstrings explain each operation and its complexity.
+- All 36 tests pass: 16 for flat lists and 20 for nested lists, covering empty lists, negative numbers, zeros, nesting, and starting indices.
+
+All four functions take O(n) time and O(n) worst-case stack space. For nested lists, n counts all elements across all levels, including sublists. See [Complexity Analysis](docs/COMPLEXITY_ANALYSIS.md) for the explanations and examples. Binary tree traversal is still planned.
 
 **Climbing Stairs — Completed**
 
@@ -43,11 +51,14 @@ Naive recursion repeats subproblems and takes O(2^n) time with O(n) stack space.
 
 **Requirements:** Python 3.10+ is recommended.
 
-Run the current exercise from the project root:
+Run the list exercises from the project root:
 
 ```bash
-python -m problems.fundamentals.climbing_stairs
+python -m problems.data_structures.recursive_list
+python -m problems.data_structures.nested_list
 ```
+
+The flat-list example prints `22` and `504`; the nested-list example prints `3` and `2`. Run Climbing Stairs with `python -m problems.fundamentals.climbing_stairs`.
 
 Optional development setup:
 
@@ -60,6 +71,12 @@ Activate the virtual environment before installing dependencies. To run the auto
 
 ```bash
 python -m pytest
+```
+
+To run only the list tests:
+
+```bash
+python -m pytest tests/test_recursive_list.py tests/test_nested_list.py -q
 ```
 
 ## Documentation
