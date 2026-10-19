@@ -37,6 +37,8 @@ Implemented:
 - Edge-case testing.
 - Final documentation.
 
+Naive recursion repeats subproblems and takes O(2^n) time with O(n) stack space. Memoization caches results, reducing time to O(n) with O(n) total auxiliary space. At `n = 10`, both return 89 ways, using 177 calls (naive) versus 19 (memoized). All 15 Climbing Stairs tests pass; see the [measured results](docs/COMPLEXITY_ANALYSIS.md).
+
 ## Getting Started
 
 **Requirements:** Python 3.10+ is recommended.
@@ -54,7 +56,7 @@ python -m venv .venv
 python -m pip install -r requirements-dev.txt
 ```
 
-Activate the virtual environment before installing dependencies. To run automated tests once they are implemented:
+Activate the virtual environment before installing dependencies. To run the automated tests:
 
 ```bash
 python -m pytest
@@ -64,6 +66,7 @@ python -m pytest
 
 - [Learning Roadmap](docs/ROADMAP.md)
 - [Complexity Analysis](docs/COMPLEXITY_ANALYSIS.md)
+- [Project Report (in progress)](docs/FINAL_REPORT.md)
 
 ## Project Principles
 

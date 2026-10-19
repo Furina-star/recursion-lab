@@ -8,21 +8,23 @@
 - [x] Implement Climbing Stairs using memoization.
 - [x] Implement naive Climbing Stairs recursion.
 - [x] Compare both approaches.
-- [ ] Explain base cases, recursive cases, and call stacks.
+- [x] Explain base cases, recursive cases, and call stacks for Climbing Stairs.
+- [x] Validate Climbing Stairs outputs, counters, and cache reuse with pytest (15 tests).
+- [x] Document Climbing Stairs approaches, complexity, and experimental results in [Complexity Analysis](COMPLEXITY_ANALYSIS.md) and the [report](FINAL_REPORT.md).
 
 ## Phase 2: Recursion Analysis
-**Status:** Not Started
+**Status:** In Progress (Climbing Stairs)
 
 - [ ] Trace recursive call trees.
-- [ ] Measure recursive function calls.
-- [ ] Identify overlapping subproblems.
-- [ ] Analyze recursive time complexity.
-- [ ] Analyze recursion stack space complexity.
+- [x] Measure recursive function calls for Climbing Stairs.
+- [x] Identify overlapping subproblems in Climbing Stairs.
+- [x] Analyze recursive time complexity for Climbing Stairs.
+- [x] Analyze recursion stack space complexity for Climbing Stairs.
 
 ## Phase 3: Memoization and Dynamic Programming
-**Status:** Not Started
+**Status:** In Progress (Climbing Stairs)
 
-- [ ] Understand top-down memoization.
+- [x] Document top-down memoization for Climbing Stairs.
 - [ ] Implement bottom-up tabulation.
 - [ ] Compare naive, memoized, and iterative solutions.
 - [ ] Analyze memory and time trade-offs.

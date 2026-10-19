@@ -8,7 +8,9 @@ Document the time complexity, space complexity, and observed execution behavior 
 
 ### Problem Description
 
-Given `n` steps, determine the number of distinct ways to reach the top when each move can climb either one or two steps.
+Given a nonnegative integer `n`, count the distinct ordered ways to climb `n` steps using moves of one or two steps.
+
+Both implementations use `ways(0) = ways(1) = 1` and `ways(n) = ways(n - 1) + ways(n - 2)`. Zero steps has one solution: take no moves. Each recursive call reduces `n` until a base case returns; pending calls then add their two results as the stack unwinds.
 
 ### Implementations
 
@@ -16,32 +18,37 @@ Given `n` steps, determine the number of distinct ways to reach the top when eac
 |---|---|---|
 | Naive Recursion | O(2^n) | O(n) |
 | Memoized Recursion | O(n) | O(n) |
-| Bottom-Up Dynamic Programming | O(n) | O(1) |
 
-The bounds above assume nonnegative inputs. The naive time bound is an exponential upper bound. The memoized implementation uses both a cache and a recursive call stack.
+- **Naive recursion:** evaluates both branches every time, repeatedly solving overlapping subproblems. Time is exponential: O(2^n) is an upper bound (the tighter bound is Theta(phi^n), where phi is approximately 1.618). The deepest call chain uses O(n) stack space.
+- **Memoized recursion:** stores results for `n >= 2` in a dictionary and returns cached results on later visits. With an initially empty cache, each non-base subproblem is computed once, giving O(n) time and O(n) total auxiliary space for the cache and stack.
+
+These bounds use the usual constant-cost arithmetic model. Bottom-up tabulation is planned but not implemented.
 
 ### Experiment: Recursive Call Counting
 
-Input: `n = 7`
+Results verified by [the pytest suite](../tests/test_climbing_stairs.py), with fresh counters and an empty cache for each input:
 
-Expected output: `21`
+| Input `n` | Output (both) | Naive calls | Memoized calls | Cache hits | Cache misses |
+|---|---|---|---|---|---|
+| 0 | 1 | 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 1 | 0 | 0 |
+| 2 | 2 | 3 | 3 | 0 | 1 |
+| 3 | 3 | 5 | 5 | 0 | 2 |
+| 4 | 5 | 9 | 7 | 1 | 3 |
+| 5 | 8 | 15 | 9 | 2 | 4 |
+| 10 | 89 | 177 | 19 | 7 | 9 |
 
-| Metric | Naive | Memoized |
-|---|---|---|
-| Total calls | To be measured | 13 expected |
-| Cache hits | N/A | 4 expected |
-| Cache misses | N/A | 6 expected |
-| Output | 21 expected | 21 expected |
+Calls include the initial invocation, base cases, and cache hits. Base cases return before cache lookup, so they count as neither hits nor misses. Repeating `n = 5` with the populated cache adds one call and one hit, with no new misses.
 
-These expected values will be checked against the completed implementations.
+Validation: `python -m pytest tests/test_climbing_stairs.py -q` returned **15 passed** on 2026-10-19 (one warning about writing pytest's cache). The tests check outputs, counters, and cache reuse; they do not benchmark runtime.
 
 ### Findings
 
-Pending completion of comparative experiments.
+At `n = 10`, memoization reduces calls from 177 to 19 (about 89% fewer) while returning the same 89 ways. For a fresh cache and `n >= 2`, memoized calls grow as `2n - 1`, while naive calls grow as `2 * ways(n) - 1`.
 
 ### Conclusion
 
-Pending.
+Memoization removes repeated computation at the cost of O(n) cached entries. Both recursive approaches retain O(n) stack depth; caching does not remove the recursion-depth limit.
 
 ---
 
