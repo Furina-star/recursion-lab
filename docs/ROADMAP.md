@@ -33,13 +33,16 @@
 
 ## Recursive Data Structures
 
-**Status:** In Progress (flat and nested lists completed on 2026-10-19)
+**Status:** In Progress (flat and nested lists completed on 2026-10-19; linked lists completed on 2026-10-21)
 
 - [x] Recursively sum and multiply elements in a flat list.
 - [x] Recursively traverse nested lists to sum and count integers.
+- [x] Recursively count linked-list nodes and sum their values.
 - [x] Add simple module docstrings describing behavior and complexity.
 - [x] Validate flat and nested list functions with pytest (36 tests).
+- [x] Validate linked lists with pytest (24 tests covering empty lists, values, node construction, suffix traversal, unchanged links and values, and demo output).
 - [x] Analyze recursion depth for flat and nested lists.
+- [x] Explain linked-list base cases, recursive cases, O(n) time and stack space, and acyclic-input and recursion-depth limits.
 - [x] Document list behavior, complexity, and test results.
 - [ ] Implement binary tree traversal.
 - [ ] Understand depth-first search.
